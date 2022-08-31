@@ -73,6 +73,7 @@ r(function(){
 
     }
 
+    //generate links based on company slug
     const generateLinks = function (slug) {
         const unresolvedIssues = `https://sentry.io/organizations/${slug}/issues/?statsPeriod=30d`
         const assignedIssues= `https://sentry.io/organizations/${slug}/issues/?query=is%3Aunresolved+is%3Aassigned&statsPeriod=14d`
@@ -96,7 +97,6 @@ r(function(){
     }
 
     const generatebutton = document.getElementById("generate-links");
-    // console.log('generatebutton',generatebutton);
     generatebutton.addEventListener('click', function(){
         const myslug = document.getElementById("enterslug").value;
         generateLinks(myslug);
