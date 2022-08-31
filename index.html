@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+<body>
+    <div id="Team Health">
+        <h3>Team Health</h3>
+        <ul>
+            <li id="unresolved" class="dropdown">
+                <span onclick="toggleShow()" id='first' class="warning dropbtn">Unresolved Issues:</span>
+                <div id="myDropdown" class="dropdown-content show">
+                    <a id='testred' class='makered'>red</a>
+                    <a onclick="makeyellow()" href="#about">yellow</a>
+                    <a onclick="makegreen()" href="#contact">green</a>
+                    <a class='makered'>red2</a>
+                </div>
+                1000+ <a target="" id="unresolved-issues">unresolved issues</a>
+            </li>
+            <li id="assigned"> 
+                <span class="yellow">Assigned Issues:</span> 97 out of 1000+ assigned issues, <span id="assigned-issues"></span>
+            </li>
+            <li id="assigned-2"> 
+                <span class="yellow">Assigned Issues:</span> 97 out of 1000+ assigned issues, <span id="assigned-issues"></span>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
+
+
+<script src="report.js"></script>
