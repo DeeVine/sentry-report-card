@@ -7,40 +7,36 @@
 <body>
 
     <div>
-        Company Slug: <input type="text" id="enterslug" value="enter company slug">
+        Company Slug: <input type="text" id="enterslug" value="zapier-1">
         <button id="generate-links">Generate Links</button>
+        <button id="hide-content">Hide Content</button>
+        <button id="clear-content">Clear Content</button>
     </div>
  
-
     <div id="team-health">
         <h3>Team Health</h3>
         <ul>
             <li class="dropdown">
-                <span class="red dropbtn">Unresolved Issues:</span>
-                <div class="mydropdown dropdown-content"></div>
-                <span contenteditable="true">1000+ <a contenteditable="false" target="_blank" id="unresolved-issues">unresolved issues</a></span> 
-            </li>
-            <li class="dropdown">
                 <span class="yellow dropbtn">Assigned Issues:</span>
                 <div class="mydropdown dropdown-content"></div>
-                <span contenteditable="true">97 out of 1000+ <a contenteditable="false" target="_blank" id="assigned-issues">assigned issues</a></span>  
+                <span class="editable" contenteditable="true">97 out of 1000+ </span><a contenteditable="false" target="_blank" id="assigned-issues">assigned issues</a>
             </li>
             <li class="dropdown">
                 <span class="red dropbtn">User Misery:</span>
                 <div class="mydropdown dropdown-content"></div>
-                <span contenteditable="true">High user misery on 8 <a contenteditable="false" target="_blank" id="transactions">transactions</a></span>  
+                <span class="editable" contenteditable="true">High user misery on 8 </span><a contenteditable="false" target="_blank" id="transactions">transactions</a>
             </li>
             <li class="dropdown">
                 <span class="yellow dropbtn">Number of Releases:</span>
                 <div class="mydropdown dropdown-content"></div>
-                <span contenteditable="true">top project is using releases some other projects are not, <a contenteditable="false" target="_blank" id="releases">releases</a></span> 
+                <span class="editable" contenteditable="true">top project is monitoring releases some other projects are not, </span><a contenteditable="false" target="_blank" id="releases">releases</a> 
             </li>
             <li class="dropdown">
                 <span class="yellow dropbtn">Crash Free Sessions:</span>
                 <div class="mydropdown dropdown-content"></div>
                 <ul>
-                    <li><span contenteditable="true">Most active project looks good with 99.987% over last 30 days, <a contenteditable="false" target="_blank" id="crashfreesessions">stats</a></span></li>
-                    <li><span contenteditable="true">2nd most active project isn’t tracking sessions, <a contenteditable="false" target="_blank" id="crashfreesessions2">stats</a></span></li>
+                    <li><span class="editable" contenteditable="true">Most active project looks good with 99.987% over last 30 days, </span><a contenteditable="false" target="_blank" id="crashfreesessions">stats</a></li>
+                    <li><span class="editable" contenteditable="true">2nd most active project isn’t tracking sessions, </span><a contenteditable="false" target="_blank" id="crashfreesessions2">stats</a></li>
                 </ul>
             </li>
         </ul>
@@ -51,17 +47,59 @@
             <li class="dropdown">
                 <span class="red dropbtn">Issue Ownership:</span>
                 <div class="mydropdown dropdown-content"></div>
-                <span contenteditable="true">No <a contenteditable="false" target="_blank" id="issueowners">ownership rules</a></span> 
+                <span class="editable" contenteditable="true">No </span><a contenteditable="false" target="_blank" id="issueowners">ownership rules</a> 
             </li>
             <li class="dropdown">
                 <span class="red dropbtn">Source Maps:</span>
                 <div class="mydropdown dropdown-content"></div>
-                <span contenteditable="true"> None uploaded, <a contenteditable="false" target="_blank" id="sourcemaps">source maps</a></span> 
+                <span class="editable" contenteditable="true"> None uploaded, </span><a contenteditable="false" target="_blank" id="sourcemaps">source maps</a> 
             </li>
             <li class="dropdown">
                 <span class="yellow dropbtn">SDKs:</span>
                 <div class="mydropdown dropdown-content"></div>
-                <span contenteditable="true"> Need to update deprecated raven <a contenteditable="false" target="_blank" id="sdks">SDKs for projects</a></span> 
+                <span class="editable" contenteditable="true"> Need to update deprecated </span><a contenteditable="false" target="_blank" id="sdks">raven SDKs</a> 
+            </li>
+        </ul>
+    </div>
+    <div id="improve-developer-productivity">
+        <h3>Resolve Issues Faster</h3>
+        <ul>
+            <li class="dropdown">
+                <span class="green dropbtn">Integrations:</span>
+                <div class="mydropdown dropdown-content"></div>
+                <span class="editable" contenteditable="true">Core integrations of Slack, Jira, and Github are all set up</span>
+                <ul>
+                    <li><span >There is an opportunity to improve how you are using Github. We're happy to jump on a quick call to share how implementing Github correctly can help accelerate time to resolution like folks at 
+                        <a href="https://sentry.io/customers/monday-dot-com/">Monday.com</a> and <a href="https://sentry.io/customers/nextdoor/">Nextdoor</a> . </span></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <span class="red dropbtn">Linked Issues:</span>
+                <div class="mydropdown dropdown-content"></div>
+                <span class="editable" contenteditable="true"> 7 out of 1000+ unresolved issues are </span><a contenteditable="false" target="_blank" id="linked">linked</a> 
+            </li>
+        </ul>
+    </div>
+    <div id="improve-issue-visibility">
+        <h3>Increase issue visibility and reduce noise</h3>
+        <ul>
+            <li class="dropdown">
+                <span class="yellow dropbtn">Alerts:</span>
+                <div class="mydropdown dropdown-content"></div>
+                <span class="editable" contenteditable="true">Issues alerts setup, but no metric alerts – </span><a contenteditable="false" target="_blank" id="alerts">alert rules</a>
+            </li>
+            <li class="dropdown">
+                <a href="https://docs.sentry.io/product/data-management-settings/event-grouping/">Custom grouping</a>
+            </li>
+            <li class="dropdown">
+                <span class="red dropbtn">Discover:</span>
+                <div class="mydropdown dropdown-content"></div>
+                <span class="editable" contenteditable="true"> only default, would be useful to create more </span><a contenteditable="false" target="_blank" id="discoverqueries">discover queries</a> 
+            </li>
+            <li class="dropdown">
+                <span class="red dropbtn">Dashboards:</span>
+                <div class="mydropdown dropdown-content"></div>
+                <span class="editable" contenteditable="true"> only default, would help to create more </span><a contenteditable="false" target="_blank" id="dashboards">dashboards</a> 
             </li>
         </ul>
     </div>

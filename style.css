@@ -4,15 +4,15 @@
 }
 
 .red {
-  background-color: pink;
+  background-color: #F4CCCC;
 }
   
 .yellow {
-  background-color: yellow;
+  background-color: #FFF2CC;
 }
 
 .green {
-  background-color: rgb(129, 175, 129);
+  background-color: #B7D7A8;
 }
 
 /* .radioform {
@@ -59,3 +59,4 @@
 .dropdown a:hover {background-color: #ddd;}
 
 .show {display: block;}
+.hide {display: none;}

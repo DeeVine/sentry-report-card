@@ -1,7 +1,5 @@
 //todos
-//use radio to change className of child
-//hide radio
-//move slug change into function -- add button to run function
+//make links editable
 
 function r(f){/in/.test(document.readyState)?setTimeout('r('+f+')',9):f()}
 // make sure DOM ready
@@ -34,6 +32,27 @@ r(function(){
         generateMenu(div);
     }
 
+    //hide/show editable content
+    const editable = document.querySelectorAll(".editable");
+    const hidecontent = document.getElementById("hide-content");
+    hidecontent.addEventListener('click', function(){
+        for (const content of editable) {
+            content.classList.toggle("hide");
+        }
+    });
+
+    //clear content
+    const colors = document.querySelectorAll('.dropbtn')
+    const clearcontent = document.getElementById("clear-content");
+    clearcontent.addEventListener('click', function(){
+        for (const content of editable) {
+            content.innerHTML = "add your comments ";
+        }
+        for (const content of colors) {
+            content.classList = "dropbtn";
+        }
+    });
+
     //Get DOM elements to add event listeners
     const dropdownmenu = document.querySelectorAll(".dropbtn");
     const redbuttons = document.querySelectorAll(".makered");
@@ -52,7 +71,6 @@ r(function(){
         button.addEventListener('click', function(event) {   
             const prevSib = this.parentElement.previousElementSibling;
             prevSib.className = "red dropbtn";
-            console.log('prevSib',prevSib)
         })
     }
 
@@ -60,7 +78,6 @@ r(function(){
         button.addEventListener('click', function(event) {
             const prevSib = this.parentElement.previousElementSibling;
             prevSib.className = "yellow dropbtn";
-            console.log('prevSib',prevSib)
         })
     }
 
@@ -68,24 +85,28 @@ r(function(){
         button.addEventListener('click', function(event) {
             const prevSib = this.parentElement.previousElementSibling;
             prevSib.className = "green dropbtn";
-            console.log('prevSib',prevSib)
+
         })
 
     }
 
     //generate links based on company slug
     const generateLinks = function (slug) {
-        const unresolvedIssues = `https://sentry.io/organizations/${slug}/issues/?statsPeriod=30d`
-        const assignedIssues= `https://sentry.io/organizations/${slug}/issues/?query=is%3Aunresolved+is%3Aassigned&statsPeriod=14d`
-        const transactions = `https://sentry.io/organizations/${slug}/performance/?landingDisplay=frontend_pageload&query=&sort=-user_misery&statsPeriod=30d`
+        // const unresolvedIssues = `https://sentry.io/organizations/${slug}/issues/?statsPeriod=30d`
+        const assignedIssues= `https://sentry.io/organizations/${slug}/issues/?query=is%3Aunresolved+is%3Aassigned&statsPeriod=30d`
+        const transactions = `https://sentry.io/organizations/${slug}/performance/?query=&sort=-user_misery&statsPeriod=30d`
         const releases = `https://sentry.io/organizations/${slug}/releases/?statsPeriod=30d`
         const crashfreesessions = `https://sentry.io/organizations/${slug}/projects/explore-ssr/?project=5270315&statsPeriod=30d`
         const crashfreesessions2 = `https://sentry.io/organizations/${slug}/projects/zapier/?project=47546`
         const issueowners = `https://sentry.io/settings/${slug}/projects/explore-ssr/ownership/`
         const sourcemaps = `https://sentry.io/settings/${slug}/projects/explore-ssr/source-maps/`
         const sdks = `https://sentry.io/organizations/${slug}/discover/results/?field=project&field=sdk.version&field=sdk.name&field=count%28%29&name=All+Events&query=sdk.name%3A%2Araven%2A&sort=-count&statsPeriod=30d&yAxis=count%28%29`
+        const linked = `https://sentry.io/organizations/${slug}/issues/?query=+is%3Alinked&statsPeriod=30d`
+        const alerts = `https://sentry.io/organizations/${slug}/alerts/rules/`
+        const discoverqueries = `https://sentry.io/organizations/${slug}/discover/queries/`
+        const dashboards = `https://www.youtube.com/watch?v=j1nIV2K2XmIns`
 
-        document.getElementById("unresolved-issues").href = unresolvedIssues;
+        // document.getElementById("unresolved-issues").href = unresolvedIssues;
         document.getElementById("assigned-issues").href = assignedIssues;
         document.getElementById("transactions").href = transactions;
         document.getElementById("releases").href = releases;
@@ -94,8 +115,14 @@ r(function(){
         document.getElementById("issueowners").href = issueowners;
         document.getElementById("sourcemaps").href = sourcemaps;
         document.getElementById("sdks").href = sdks;
+        document.getElementById("linked").href = linked;
+        document.getElementById("alerts").href = alerts;
+        document.getElementById("discoverqueries").href = discoverqueries;
+        document.getElementById("dashboards").href = dashboards;
+        
     }
 
+    //generate links
     const generatebutton = document.getElementById("generate-links");
     generatebutton.addEventListener('click', function(){
         const myslug = document.getElementById("enterslug").value;
@@ -103,7 +130,6 @@ r(function(){
     });
 
 });
-
 
 // Close the dropdown if the user clicks outside of it
 window.onclick = function(event) {
