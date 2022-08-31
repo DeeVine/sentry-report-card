@@ -5,23 +5,63 @@
     <link rel="stylesheet" type="text/css" href="style.css"/>
 </head>
 <body>
-    <div id="Team Health">
+
+    <div>
+        Company Slug: <input type="text" id="enterslug" value="enter company slug">
+        <button id="generate-links">Generate Links</button>
+    </div>
+ 
+
+    <div id="team-health">
         <h3>Team Health</h3>
         <ul>
             <li class="dropdown">
-                <span id='first' class="red dropbtn">Unresolved Issues:</span>
+                <span class="red dropbtn">Unresolved Issues:</span>
                 <div class="mydropdown dropdown-content"></div>
                 <span contenteditable="true">1000+ <a contenteditable="false" target="_blank" id="unresolved-issues">unresolved issues</a></span> 
             </li>
-            <li id="assigned" class="dropdown">
-                <span id='first' class="yellow dropbtn">Assigned Issues:</span>
+            <li class="dropdown">
+                <span class="yellow dropbtn">Assigned Issues:</span>
                 <div class="mydropdown dropdown-content"></div>
                 <span contenteditable="true">97 out of 1000+ <a contenteditable="false" target="_blank" id="assigned-issues">assigned issues</a></span>  
             </li>
-            <li id="assigned" class="dropdown">
-                <span id='first' class="yellow dropbtn">Assigned Issues:</span>
+            <li class="dropdown">
+                <span class="red dropbtn">User Misery:</span>
                 <div class="mydropdown dropdown-content"></div>
-                <span contenteditable="true">97 out of 1000+ <a contenteditable="false" target="_blank" id="assigned-issues">assigned issues</a></span>  
+                <span contenteditable="true">High user misery on 8 <a contenteditable="false" target="_blank" id="transactions">transactions</a></span>  
+            </li>
+            <li class="dropdown">
+                <span class="yellow dropbtn">Number of Releases:</span>
+                <div class="mydropdown dropdown-content"></div>
+                <span contenteditable="true">top project is using releases some other projects are not, <a contenteditable="false" target="_blank" id="releases">releases</a></span> 
+            </li>
+            <li class="dropdown">
+                <span class="yellow dropbtn">Crash Free Sessions:</span>
+                <div class="mydropdown dropdown-content"></div>
+                <ul>
+                    <li><span contenteditable="true">Most active project looks good with 99.987% over last 30 days, <a contenteditable="false" target="_blank" id="crashfreesessions">stats</a></span></li>
+                    <li><span contenteditable="true">2nd most active project isn’t tracking sessions, <a contenteditable="false" target="_blank" id="crashfreesessions2">stats</a></span></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div id="improve-developer-productivity">
+        <h3>Improve Developer Productivity</h3>
+        <ul>
+            <li class="dropdown">
+                <span class="red dropbtn">Issue Ownership:</span>
+                <div class="mydropdown dropdown-content"></div>
+                <span contenteditable="true">No <a contenteditable="false" target="_blank" id="issueowners">ownership rules</a></span> 
+            </li>
+            <li class="dropdown">
+                <span class="red dropbtn">Source Maps:</span>
+                <div class="mydropdown dropdown-content"></div>
+                <span contenteditable="true"> None uploaded, <a contenteditable="false" target="_blank" id="sourcemaps">source maps</a></span> 
+            </li>
+            <li class="dropdown">
+                <span class="yellow dropbtn">SDKs:</span>
+                <div class="mydropdown dropdown-content"></div>
+                <span contenteditable="true"> Need to update deprecated raven <a contenteditable="false" target="_blank" id="sdks">SDKs for projects</a></span> 
             </li>
         </ul>
     </div>

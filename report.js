@@ -70,28 +70,40 @@ r(function(){
             prevSib.className = "green dropbtn";
             console.log('prevSib',prevSib)
         })
+
     }
-    
+
+    const generateLinks = function (slug) {
+        const unresolvedIssues = `https://sentry.io/organizations/${slug}/issues/?statsPeriod=30d`
+        const assignedIssues= `https://sentry.io/organizations/${slug}/issues/?query=is%3Aunresolved+is%3Aassigned&statsPeriod=14d`
+        const transactions = `https://sentry.io/organizations/${slug}/performance/?landingDisplay=frontend_pageload&query=&sort=-user_misery&statsPeriod=30d`
+        const releases = `https://sentry.io/organizations/${slug}/releases/?statsPeriod=30d`
+        const crashfreesessions = `https://sentry.io/organizations/${slug}/projects/explore-ssr/?project=5270315&statsPeriod=30d`
+        const crashfreesessions2 = `https://sentry.io/organizations/${slug}/projects/zapier/?project=47546`
+        const issueowners = `https://sentry.io/settings/${slug}/projects/explore-ssr/ownership/`
+        const sourcemaps = `https://sentry.io/settings/${slug}/projects/explore-ssr/source-maps/`
+        const sdks = `https://sentry.io/organizations/${slug}/discover/results/?field=project&field=sdk.version&field=sdk.name&field=count%28%29&name=All+Events&query=sdk.name%3A%2Araven%2A&sort=-count&statsPeriod=30d&yAxis=count%28%29`
+
+        document.getElementById("unresolved-issues").href = unresolvedIssues;
+        document.getElementById("assigned-issues").href = assignedIssues;
+        document.getElementById("transactions").href = transactions;
+        document.getElementById("releases").href = releases;
+        document.getElementById("crashfreesessions").href = crashfreesessions;
+        document.getElementById("crashfreesessions2").href = crashfreesessions2;
+        document.getElementById("issueowners").href = issueowners;
+        document.getElementById("sourcemaps").href = sourcemaps;
+        document.getElementById("sdks").href = sdks;
+    }
+
+    const generatebutton = document.getElementById("generate-links");
+    // console.log('generatebutton',generatebutton);
+    generatebutton.addEventListener('click', function(){
+        const myslug = document.getElementById("enterslug").value;
+        generateLinks(myslug);
+    });
+
 });
 
-const slug = 'mirrorfitness'
-
-const unresolvedIssues = `https://sentry.io/organizations/${slug}/issues/`
-const assignedIssues= `https://sentry.io/organizations/zapier-1/issues/?query=is%3Aunresolved+is%3Aassigned&statsPeriod=14d`
-
-document.getElementById("unresolved-issues").href = unresolvedIssues;
-document.getElementById("assigned-issues").href = assignedIssues;
-
-//change classname
-//target first span of "this"?
-// document.getElementById("first").className = "yellow";
-
-/* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
-// function toggleShow() {
-//     document.getElementById("dropdowndiv").classList.toggle("show");
-//     // document.getElementById("dropdowndiv").className="dropdown-content show"
-// }
 
 // Close the dropdown if the user clicks outside of it
 window.onclick = function(event) {
