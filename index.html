@@ -8,21 +8,20 @@
     <div id="Team Health">
         <h3>Team Health</h3>
         <ul>
-            <li id="unresolved" class="dropdown">
-                <span onclick="toggleShow()" id='first' class="warning dropbtn">Unresolved Issues:</span>
-                <div id="myDropdown" class="dropdown-content show">
-                    <a id='testred' class='makered'>red</a>
-                    <a onclick="makeyellow()" href="#about">yellow</a>
-                    <a onclick="makegreen()" href="#contact">green</a>
-                    <a class='makered'>red2</a>
-                </div>
-                1000+ <a target="" id="unresolved-issues">unresolved issues</a>
+            <li class="dropdown">
+                <span id='first' class="red dropbtn">Unresolved Issues:</span>
+                <div class="mydropdown dropdown-content"></div>
+                <span contenteditable="true">1000+ <a contenteditable="false" target="_blank" id="unresolved-issues">unresolved issues</a></span> 
             </li>
-            <li id="assigned"> 
-                <span class="yellow">Assigned Issues:</span> 97 out of 1000+ assigned issues, <span id="assigned-issues"></span>
+            <li id="assigned" class="dropdown">
+                <span id='first' class="yellow dropbtn">Assigned Issues:</span>
+                <div class="mydropdown dropdown-content"></div>
+                <span contenteditable="true">97 out of 1000+ <a contenteditable="false" target="_blank" id="assigned-issues">assigned issues</a></span>  
             </li>
-            <li id="assigned-2"> 
-                <span class="yellow">Assigned Issues:</span> 97 out of 1000+ assigned issues, <span id="assigned-issues"></span>
+            <li id="assigned" class="dropdown">
+                <span id='first' class="yellow dropbtn">Assigned Issues:</span>
+                <div class="mydropdown dropdown-content"></div>
+                <span contenteditable="true">97 out of 1000+ <a contenteditable="false" target="_blank" id="assigned-issues">assigned issues</a></span>  
             </li>
         </ul>
     </div>

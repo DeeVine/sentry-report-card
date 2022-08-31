@@ -7,25 +7,77 @@ function r(f){/in/.test(document.readyState)?setTimeout('r('+f+')',9):f()}
 // make sure DOM ready
 r(function(){
     // alert('DOM Ready!');
+    const dropdowndiv = document.querySelectorAll(".mydropdown");
 
-    // document.getElementById('testred').onclick = makeRed;
+    //generate dropdownmenu
+    const generateMenu = function (e) {
+        var mydiv = e;
+        var aTag = document.createElement('a');
+        aTag.className = "makered";
+        aTag.innerText = "red";
+        mydiv.appendChild(aTag);
+
+        var mydiv = e;
+        var aTag = document.createElement('a');
+        aTag.className = "makeyellow";
+        aTag.innerText = "yellow";
+        mydiv.appendChild(aTag);
+
+        var mydiv = e;
+        var aTag = document.createElement('a');
+        aTag.className = "makegreen";
+        aTag.innerText = "green";
+        mydiv.appendChild(aTag);
+    }
+
+    for (const div of dropdowndiv) {
+        generateMenu(div);
+    }
+
+    //Get DOM elements to add event listeners
+    const dropdownmenu = document.querySelectorAll(".dropbtn");
     const redbuttons = document.querySelectorAll(".makered");
+    const yellowbuttons = document.querySelectorAll(".makeyellow");
+    const greenbuttons = document.querySelectorAll(".makegreen");
 
+   //toggle menu
+   for (const menu of dropdownmenu) {
+        menu.addEventListener('click', function(e) {
+            e.target.nextElementSibling.classList.toggle("show");
+        })
+    }
+
+    //change class color
     for (const button of redbuttons) {
-        button.addEventListener('click', function(event) {
-
-            //change class of span
+        button.addEventListener('click', function(event) {   
             const prevSib = this.parentElement.previousElementSibling;
-            prevSib.className = "warning dropbtn";
+            prevSib.className = "red dropbtn";
             console.log('prevSib',prevSib)
         })
     }
+
+    for (const button of yellowbuttons) {
+        button.addEventListener('click', function(event) {
+            const prevSib = this.parentElement.previousElementSibling;
+            prevSib.className = "yellow dropbtn";
+            console.log('prevSib',prevSib)
+        })
+    }
+
+    for (const button of greenbuttons) {
+        button.addEventListener('click', function(event) {
+            const prevSib = this.parentElement.previousElementSibling;
+            prevSib.className = "green dropbtn";
+            console.log('prevSib',prevSib)
+        })
+    }
+    
 });
 
 const slug = 'mirrorfitness'
 
 const unresolvedIssues = `https://sentry.io/organizations/${slug}/issues/`
-const assignedIssues= `<a href=https://sentry.io/organizations/zapier-1/issues/?query=is%3Aunresolved+is%3Aassigned&statsPeriod=14d>stats</a>`
+const assignedIssues= `https://sentry.io/organizations/zapier-1/issues/?query=is%3Aunresolved+is%3Aassigned&statsPeriod=14d`
 
 document.getElementById("unresolved-issues").href = unresolvedIssues;
 document.getElementById("assigned-issues").href = assignedIssues;
@@ -36,10 +88,10 @@ document.getElementById("assigned-issues").href = assignedIssues;
 
 /* When the user clicks on the button, 
 toggle between hiding and showing the dropdown content */
-function toggleShow() {
-    document.getElementById("myDropdown").classList.toggle("show");
-    // document.getElementById("myDropdown").className="dropdown-content show"
-}
+// function toggleShow() {
+//     document.getElementById("dropdowndiv").classList.toggle("show");
+//     // document.getElementById("dropdowndiv").className="dropdown-content show"
+// }
 
 // Close the dropdown if the user clicks outside of it
 window.onclick = function(event) {
@@ -54,17 +106,3 @@ window.onclick = function(event) {
     }
     }
 }
-
-
-
-function makeyellow() {
-    document.getElementById('first').className = "yellow dropbtn";
-}
-function makegreen() {
-    document.getElementById('first').className = "green dropbtn";
-}
-
-//set class for span
-//need to target "this" instead of getElementById
-const prevSib = document.getElementById("myDropdown").previousElementSibling.id;
-console.log('prevSib',prevSib)
