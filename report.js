@@ -35,10 +35,14 @@ r(function(){
     //hide/show editable content
     const editable = document.querySelectorAll(".editable");
     const hidecontent = document.getElementById("hide-content");
-    hidecontent.addEventListener('click', function(){
+    hidecontent.addEventListener('click', function(e){
         for (const content of editable) {
             content.classList.toggle("hide");
         }
+        console.log('e hide content',e.target.innerHTML)
+        let text = e.target.innerHTML;
+        if (text === "Hide Content") { e.target.innerHTML = "Show Content" }
+        else { e.target.innerHTML = "Hide Content" }
     });
 
     //clear content
