@@ -101,8 +101,9 @@ r(function(){
         const transactions = `https://sentry.io/organizations/${slug}/performance/?query=&sort=-user_misery&statsPeriod=30d`
         const releases = `https://sentry.io/organizations/${slug}/releases/?statsPeriod=30d`
         const crashfreesessions = `https://sentry.io/organizations/${slug}/projects/explore-ssr/?project=5270315&statsPeriod=30d`
-        const crashfreesessions2 = `https://sentry.io/organizations/${slug}/projects/zapier/?project=47546`
+        const crashfreesessions2 = `https://sentry.io/organizations/${slug}/projects/zapier/?project=47546&statsPeriod=30d`
         const issueowners = `https://sentry.io/settings/${slug}/projects/explore-ssr/ownership/`
+        const integrations = `https://sentry.io/settings/${slug}/integrations/`
         const sourcemaps = `https://sentry.io/settings/${slug}/projects/explore-ssr/source-maps/`
         const sdks = `https://sentry.io/organizations/${slug}/discover/results/?field=project&field=sdk.version&field=sdk.name&field=count%28%29&name=All+Events&query=sdk.name%3A%2Araven%2A&sort=-count&statsPeriod=30d&yAxis=count%28%29`
         const linked = `https://sentry.io/organizations/${slug}/issues/?query=+is%3Alinked&statsPeriod=30d`
@@ -117,6 +118,7 @@ r(function(){
         document.getElementById("crashfreesessions").href = crashfreesessions;
         document.getElementById("crashfreesessions2").href = crashfreesessions2;
         document.getElementById("issueowners").href = issueowners;
+        document.getElementById("integrations").href = integrations;
         document.getElementById("sourcemaps").href = sourcemaps;
         document.getElementById("sdks").href = sdks;
         document.getElementById("linked").href = linked;
