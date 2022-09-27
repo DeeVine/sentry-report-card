@@ -115,6 +115,7 @@ r(function(){
         const alerts = `https://sentry.io/organizations/${slug}/alerts/rules/`
         const discoverqueries = `https://sentry.io/organizations/${slug}/discover/queries/`
         const dashboards = `https://www.youtube.com/watch?v=j1nIV2K2XmIns`
+        const jsprojects = `https://sentry.io/organizations/${slug}/discover/results/?field=project&field=sdk.name&field=count%28%29&name=All+Events&project=-1&query=sdk.name%3Asentry.javascript%2A&sort=-count&statsPeriod=30d&yAxis=count%28%29`
 
         // document.getElementById("unresolved-issues").href = unresolvedIssues;
         document.getElementById("assigned-issues").href = assignedIssues;
@@ -130,11 +131,8 @@ r(function(){
         document.getElementById("alerts").href = alerts;
         document.getElementById("discoverqueries").href = discoverqueries;
         document.getElementById("dashboards").href = dashboards;
-
-        //reference links
-        const jsprojects = `https://sentry.io/organizations/${slug}/discover/results/?field=project&field=sdk.name&field=count%28%29&name=All+Events&project=-1&query=sdk.name%3Asentry.javascript%2A&sort=-count&statsPeriod=30d&yAxis=count%28%29`
-
         document.getElementById("jsprojects").href = jsprojects;
+
     }
 
     //generate links
