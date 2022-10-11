@@ -104,7 +104,7 @@ r(function(){
         // const unresolvedIssues = `https://sentry.io/organizations/${slug}/issues/?statsPeriod=30d`
         const assignedIssues= `https://sentry.io/organizations/${slug}/issues/?query=is%3Aunresolved+is%3Aassigned&statsPeriod=30d`
         const transactions = `https://sentry.io/organizations/${slug}/performance/?query=&sort=-count_unique_user&statsPeriod=30d`
-        const releases = `https://sentry.io/organizations/${slug}/releases/?statsPeriod=30d`
+        const releases = `https://sentry.io/organizations/${slug}/discover/results/?field=project&field=count_unique%28release%29&field=count%28%29&name=All+Events&query=&sort=-count&statsPeriod=30d&yAxis=count%28%29`
         // const crashfreesessions = `https://sentry.io/organizations/${slug}/projects/explore-ssr/?project=5270315&statsPeriod=30d`
         // const crashfreesessions2 = `https://sentry.io/organizations/${slug}/projects/zapier/?project=47546&statsPeriod=30d`
         // const issueowners = `https://sentry.io/settings/${slug}/projects/explore-ssr/ownership/`
